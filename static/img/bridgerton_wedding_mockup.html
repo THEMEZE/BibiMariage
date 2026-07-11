@@ -1,0 +1,118 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+.preview{font-family:'Cormorant Garamond',serif;background:linear-gradient(135deg,#f5f0e8,#e8f0f5);border-radius:12px;padding:2rem;min-height:520px;display:flex;flex-direction:column;gap:2rem}
+.badge{display:inline-block;background:rgba(180,160,120,0.2);border:1px solid rgba(180,160,120,0.6);color:#7a6040;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:8px}
+.section{background:rgba(255,255,255,0.7);border:0.5px solid rgba(180,160,120,0.4);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:12px}
+.sec-title{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#6b5030;letter-spacing:1px;text-transform:uppercase}
+.envelope-demo{display:flex;flex-direction:column;align-items:center;gap:12px}
+.env{width:120px;height:80px;background:#f0e8d5;border:1.5px solid #c4a76a;border-radius:4px;position:relative;cursor:pointer;transition:transform 0.3s}
+.env:hover{transform:scale(1.05)}
+.env-flap{position:absolute;top:0;left:0;width:100%;height:40px;background:#e8dcc8;border-bottom:1px solid #c4a76a;clip-path:polygon(0 0,50% 60%,100% 0);transition:transform 0.4s}
+.env.open .env-flap{transform:rotateX(160deg);transform-origin:top}
+.env-label{font-family:'Dancing Script',cursive;font-size:12px;color:#7a6040;padding-top:44px;text-align:center}
+.letter-demo{width:100px;height:70px;background:#fffdf7;border:1px solid #ddd8c8;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Dancing Script',cursive;font-size:9px;color:#6b5030;text-align:center;padding:6px;line-height:1.4}
+.pages-flow{display:flex;gap:8px;align-items:flex-start}
+.page-card{flex:1;background:rgba(255,255,255,0.8);border:0.5px solid rgba(180,160,120,0.5);border-radius:8px;padding:12px;min-height:120px}
+.page-num{font-family:'Playfair Display',serif;font-size:10px;color:#c4a76a;letter-spacing:2px;margin-bottom:6px}
+.page-content{display:flex;flex-direction:column;gap:4px}
+.block{height:8px;border-radius:2px;background:rgba(180,160,120,0.25)}
+.block.dark{background:rgba(100,70,30,0.3)}
+.block.w60{width:60%}
+.block.w80{width:80%}
+.block.w40{width:40%}
+.arrow-down{text-align:center;color:#c4a76a;font-size:18px;padding:4px}
+.color-row{display:flex;gap:6px;flex-wrap:wrap}
+.swatch{width:40px;height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:8px;color:white;font-weight:600}
+.files-list{display:flex;flex-direction:column;gap:6px}
+.file-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#6b5030}
+.file-icon{width:24px;height:24px;background:rgba(180,160,120,0.2);border:1px solid rgba(180,160,120,0.4);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#7a6040;font-weight:700}
+</style>
+<div class="preview">
+<h2 class="sr-only">Maquette du site de mariage Bridgerton</h2>
+
+<div style="text-align:center">
+  <div class="badge">Phylidia & Guillaume — Mariage</div>
+  <div style="font-family:'Playfair Display',serif;font-size:22px;color:#4a3520;margin-top:6px;font-style:italic">Structure du site proposée</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+
+  <div class="section">
+    <div class="sec-title">📜 Page 1 — L'enveloppe</div>
+    <div class="envelope-demo">
+      <div class="env open" id="envDemo">
+        <div class="env-flap"></div>
+        <div class="env-label">P & G</div>
+      </div>
+      <div style="font-size:11px;color:#7a6040;text-align:center">↑ clic → s'ouvre<br>la lettre monte</div>
+      <div class="letter-demo">"Chère lectrice,<br>il se trouve que<br>notre histoire<br>commence ici..."</div>
+      <div style="font-size:10px;color:#9a8060;text-align:center;font-style:italic">texte tapé lettre par lettre<br>effet machine à écrire élégant</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">🌸 Page 2 — Contenu</div>
+    <div class="pages-flow">
+      <div style="display:flex;flex-direction:column;gap:6px;width:100%">
+        <div style="font-size:10px;color:#7a6040;font-style:italic">scroll vers le bas ↓</div>
+        <div class="page-card">
+          <div class="page-num">① Date & Lieu</div>
+          <div class="page-content">
+            <div class="block dark w60"></div>
+            <div class="block w80"></div>
+            <div class="block w40"></div>
+          </div>
+        </div>
+        <div class="page-card">
+          <div class="page-num">② Programme</div>
+          <div class="page-content">
+            <div class="block w80"></div>
+            <div class="block w60"></div>
+            <div class="block w80"></div>
+          </div>
+        </div>
+        <div class="page-card">
+          <div class="page-num">③ RSVP + Photos</div>
+          <div class="page-content">
+            <div class="block dark w40"></div>
+            <div class="block w80"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="sec-title">🎨 Palette Bridgerton</div>
+  <div class="color-row">
+    <div class="swatch" style="background:#8ba5c9">Bleu<br>ciel</div>
+    <div class="swatch" style="background:#a8c5a0">Vert<br>sauge</div>
+    <div class="swatch" style="background:#c4a76a">Or</div>
+    <div class="swatch" style="background:#d4a5b0">Rose<br>poudré</div>
+    <div class="swatch" style="background:#7a6040">Brun<br>encre</div>
+    <div class="swatch" style="background:#f5f0e8;color:#7a6040;border:1px solid #c4a76a">Crème<br>parchemin</div>
+  </div>
+  <div style="font-size:11px;color:#7a6040;font-style:italic">Typographies : Playfair Display (titres) + Dancing Script (lettres manuscrites) + Cormorant Garamond (texte)</div>
+</div>
+
+<div class="section">
+  <div class="sec-title">📁 Fichiers générés</div>
+  <div class="files-list">
+    <div class="file-item"><div class="file-icon">H</div><strong>index.html</strong> — page principale (enveloppe + lettre + scroll vers page 2)</div>
+    <div class="file-item"><div class="file-icon">C</div><strong>style.css</strong> — tout le style Bridgerton</div>
+    <div class="file-item"><div class="file-icon">J</div><strong>main.js</strong> — animations enveloppe, effet typewriter, scroll reveal</div>
+    <div class="file-item"><div class="file-icon">S</div><strong>flowers.svg</strong> — ornements floraux (inline, pas d'image externe)</div>
+  </div>
+  <div style="font-size:11px;color:#7a6040;margin-top:4px;font-style:italic">→ Tu ajoutes tes images/vidéos dans un dossier <code>assets/</code> sur GitHub</div>
+</div>
+
+</div>
+<script>
+const env = document.getElementById('envDemo');
+env.addEventListener('click', () => env.classList.toggle('open'));
+</script>

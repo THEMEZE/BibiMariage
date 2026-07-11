@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phylidia & Guillaume — Notre Mariage 💍</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/THEMEZE/BibiUnion2/main/static/img/Bridgerton_logo_square.png"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Phylidia & Guillaume — Notre Mariage" />
+    <meta
+      property="og:description"
+      content="Nous avons l'honneur de vous inviter à partager notre jour le plus précieux. 💍"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/THEMEZE/BibiUnion2/main/static/img/Bridgerton_logo_square.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://themeze.github.io/BibiUnion2/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Phylidia & Guillaume — Notre Mariage" />
+    <meta
+      name="twitter:description"
+      content="Nous avons l'honneur de vous inviter à partager notre jour le plus précieux. 💍"
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/THEMEZE/BibiUnion2/main/static/img/Bridgerton_logo_square.png"
+    />
+
+    <!-- Fonts & styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ════════════════════════════════════════════════════
+  PAGE 1 — ENVELOPPE
+════════════════════════════════════════════════════ -->
+    <section id="page-envelope" aria-label="Invitation — cliquez pour ouvrir">
+      <!-- Ornement SVG en arrière-plan -->
+      <!-- (flowers.svg est référencé via CSS background-image) -->
+
+      <header class="envelope-header">
+        <p class="pre-title">Vous êtes cordialement invités au mariage de</p>
+        <h1>
+          <em>Phylidia</em><br />
+          &amp;<br />
+          <em>Guillaume</em>
+        </h1>
+        <div class="ornament-divider">✦</div>
+        <p
+          style="
+            font-family: var(--font-body);
+            font-style: italic;
+            color: var(--ink-muted);
+            font-size: 1rem;
+            letter-spacing: 2px;
+          "
+        >
+          Cliquez sur l'enveloppe pour découvrir votre invitation
+        </p>
+      </header>
+
+      <!-- ENVELOPPE -->
+      <div class="envelope-wrapper">
+        <div
+          class="envelope"
+          id="envelope"
+          role="button"
+          tabindex="0"
+          aria-label="Ouvrir l'enveloppe pour lire votre invitation"
+          onkeydown="
+            if (event.key === 'Enter' || event.key === ' ') this.click();
+          "
+        >
+          <!-- Corps -->
+          <div class="env-body"></div>
+          <!-- Triangles latéraux (ombre intérieure) -->
+          <div class="env-side-left"></div>
+          <div class="env-side-right"></div>
+          <!-- Triangle du bas -->
+          <div class="env-bottom"></div>
+          <!-- Rabat supérieur -->
+          <div class="env-flap"></div>
+          <!-- Cachet de cire -->
+          <div class="env-seal">P&amp;G</div>
+        </div>
+
+        <!-- LETTRE (sort de l'enveloppe) -->
+        <article class="letter" id="letter" aria-live="polite">
+          <div class="letter-header">
+            <span class="letter-monogram">Phylidia &amp; Guillaume</span>
+            <span class="letter-date">10/07/2026</span>
+          </div>
+          <!-- Texte tapé lettre par lettre -->
+          <p
+            class="letter-body"
+            id="letter-body"
+            aria-label="Texte de l'invitation"
+          ></p>
+          <!-- Signature -->
+          <p class="letter-signature" id="letter-signature">
+            Phylidia &amp; Guillaume ♡
+          </p>
+        </article>
+      </div>
+      <!-- /envelope-wrapper -->
+
+      <!-- Hint de scroll après la lettre -->
+      <div class="scroll-hint" id="scroll-hint">
+        <p>Faites défiler pour découvrir</p>
+        <button
+          class="scroll-arrow"
+          id="scroll-down-btn"
+          aria-label="Faire défiler vers le bas"
+        >
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+  PAGE 2 — CONTENU DU MARIAGE
+════════════════════════════════════════════════════ -->
+    <div id="page-content">
+      <!-- ── ① HERO ──────────────────────────────────────── -->
+      <section id="section-hero" class="w-section" aria-labelledby="hero-title">
+        <!-- Ornement SVG floral (inline, couleur or) -->
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          width="120"
+          height="60"
+          viewBox="0 0 120 60"
+          style="display: block; margin: 0 auto 1.5rem; opacity: 0.5"
+        >
+          <path
+            d="M60,30 Q40,10 10,15"
+            stroke="#c4a76a"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M60,30 Q80,10 110,15"
+            stroke="#c4a76a"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M60,30 Q60,5 60,0"
+            stroke="#c4a76a"
+            stroke-width="0.8"
+            fill="none"
+          />
+          <circle cx="10" cy="15" r="4" fill="#c4a76a" opacity="0.7" />
+          <circle cx="110" cy="15" r="4" fill="#c4a76a" opacity="0.7" />
+          <circle cx="60" cy="0" r="5" fill="#c4a76a" opacity="0.8" />
+          <ellipse
+            cx="30"
+            cy="20"
+            rx="9"
+            ry="5"
+            fill="#a8c5a0"
+            opacity="0.5"
+            transform="rotate(-25,30,20)"
+          />
+          <ellipse
+            cx="90"
+            cy="20"
+            rx="9"
+            ry="5"
+            fill="#a8c5a0"
+            opacity="0.5"
+            transform="rotate(25,90,20)"
+          />
+        </svg>
+
+        <div class="reveal">
+          <p class="names" id="hero-title">
+            Phylidia<br />
+            <span class="ampersand">&amp;</span>
+            Guillaume
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <!-- 
+        ✏️ PERSONNALISE : remplace par ta vraie date et lieu
+      -->
+          <p class="hero-date">Mercredi 15 Juillet 2026</p>
+          <p class="hero-location">Paris, France</p>
+        </div>
+
+        <!-- COMPTE À REBOURS -->
+        <!-- ✏️ PERSONNALISE : change data-date avec ta vraie date de mariage -->
+        <div class="reveal reveal-delay-3" style="margin-top: 2rem">
+          <div
+            id="countdown"
+            data-date="2026-07-15T14:00:00"
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 2rem;
+              flex-wrap: wrap;
+              font-family: var(--font-display);
+              color: var(--ink-light);
+            "
+          >
+            <!-- Rempli par JS -->
+          </div>
+          <style>
+            #countdown span {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0.25rem;
+              font-size: 2rem;
+              font-weight: 400;
+              font-style: italic;
+              color: var(--ink);
+            }
+            #countdown small {
+              font-family: var(--font-body);
+              font-style: normal;
+              font-size: 0.7rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--ink-muted);
+            }
+          </style>
+        </div>
+
+        <!-- Photos principales (à remplacer par tes vraies images) -->
+        <div class="reveal reveal-delay-4">
+          <div class="media-strip" style="margin-top: 3rem">
+            <!-- 
+          ✏️ PERSONNALISE : remplace src par tes vraies photos
+          Pour ajouter une vidéo : utilise <video> au lieu de <img>
+          Exemple :
+          <video src="assets/video.mp4" autoplay muted loop playsinline></video>
+        -->
+
+            <div class="media-item" data-src="assets/photo1.jpg">
+              <img
+                src="assets/photo1.jpg"
+                alt="Phylidia et Guillaume"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'placeholder-label\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>Photo 1</span></div>'
+                "
+              />
+            </div>
+
+            <div class="media-item" data-src="assets/photo2.jpg">
+              <img
+                src="assets/photo2.jpg"
+                alt="Photo de couple"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'placeholder-label\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>Photo 2</span></div>'
+                "
+              />
+            </div>
+
+            <div class="media-item" data-src="assets/photo3.jpg">
+              <img
+                src="assets/photo3.jpg"
+                alt="Photo de couple"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'placeholder-label\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>Photo 3</span></div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ② PROGRAMME ─────────────────────────────────── -->
+      <section
+        id="section-programme"
+        class="w-section"
+        aria-labelledby="prog-title"
+      >
+        <!-- Ornement -->
+        <svg
+          aria-hidden="true"
+          width="60"
+          height="30"
+          viewBox="0 0 60 30"
+          style="display: block; margin: 0 auto 0.75rem; opacity: 0.4"
+        >
+          <path
+            d="M30,15 Q20,5 5,8 M30,15 Q40,5 55,8 M30,15 Q30,3 30,0"
+            stroke="#c4a76a"
+            stroke-width="1"
+            fill="none"
+          />
+        </svg>
+
+        <span class="section-label reveal">Le Programme</span>
+        <h2 class="section-title reveal" id="prog-title">Le Déroulé du Jour</h2>
+
+        <div id="programme-timeline" class="timeline">
+          <!-- 
+        ✏️ PERSONNALISE : modifie les horaires, titres et descriptions
+      -->
+
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="timeline-time">14h00</div>
+            <div style="position: relative">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Cérémonie Civile</h3>
+                <p>Mairie du 19e arrondissement, Paris</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="timeline-time">15h00</div>
+            <div style="position: relative">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Vin d'honneur</h3>
+                <p>Parc du Buttes-Chaumont</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-3">
+            <div class="timeline-time">17h00</div>
+            <div style="position: relative">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Dîner de Gala</h3>
+                <p>????</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-time">22h30</div>
+        <div style="position:relative">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Bal & Fête</h3>
+            <p>Danse, célébration jusqu'à l'aube</p>
+          </div>
+        </div>
+      </div> -->
+        </div>
+        <!-- /timeline -->
+      </section>
+
+      <!-- ── ③ INFOS PRATIQUES ────────────────────────────── -->
+      <section
+        id="section-details"
+        class="w-section"
+        aria-labelledby="details-title"
+      >
+        <span class="section-label reveal">Informations</span>
+        <h2 class="section-title reveal" id="details-title">
+          Ce qu'il faut savoir
+        </h2>
+
+        <div class="cards">
+          <div class="detail-card reveal reveal-delay-1">
+            <span class="card-icon">🏛️</span>
+            <h3>Le Lieu</h3>
+            <!-- ✏️ PERSONNALISE -->
+            <p>
+              Mairie du 19ᵉ arrondissement <br />
+              75019 Paris<br />
+              <a
+                href="https://maps.google.com/?q=Mairie+du+19ᵉ+arrondissement+de+Paris"
+                target="_blank"
+                rel="noopener"
+              >
+                Voir sur la carte →
+              </a>
+            </p>
+          </div>
+
+          <div class="detail-card reveal reveal-delay-2">
+            <span class="card-icon">🚗</span>
+            <h3>Comment venir</h3>
+            <!-- ✏️ PERSONNALISE -->
+            <p>
+              Gare du Nord -> Laumière <br />
+              (5 min) • Métro 5 • Bobigny - Pablo Picasso
+            </p>
+          </div>
+
+          <!-- <div class="detail-card reveal reveal-delay-3">
+            <span class="card-icon">🏨</span> -->
+          <!-- <h3>Hébergement</h3> -->
+          <!-- ✏️ PERSONNALISE -->
+          <!-- <p>
+              Des chambres sont réservées à l'<br />
+              Hôtel Aigle Noir ★★★★<br />
+              <a href="https://www.hotelaigle.fr" target="_blank" rel="noopener"
+                >Réserver →</a
+              >
+            </p>
+          </div> -->
+
+          <div class="detail-card reveal reveal-delay-4">
+            <span class="card-icon">👗</span>
+            <h3>Code vestimentaire</h3>
+            <!-- ✏️ PERSONNALISE -->
+            <p>
+              Tenue de soirée élégante.<br />
+              Palette : tons jaune &amp; blanc.<br />
+              <!-- Le blanc est réservé à la mariée. -->
+            </p>
+          </div>
+        </div>
+        <!-- /cards -->
+      </section>
+
+      <!-- ── ④ GALERIE ────────────────────────────────────── -->
+      <section
+        id="section-gallery"
+        class="w-section"
+        aria-labelledby="gallery-title"
+      >
+        <span class="section-label reveal">Notre Histoire</span>
+        <h2 class="section-title reveal" id="gallery-title">En Images</h2>
+
+        <!--
+      ✏️ PERSONNALISE : 
+      • Remplace les src par tes vraies photos/vidéos
+      • Ajoute data-src="chemin/vers/image.jpg" sur .gallery-item pour le lightbox
+      • Pour une vidéo : <video src="..." autoplay muted loop playsinline></video>
+      • Organise tes fichiers dans assets/ sur GitHub
+    -->
+        <div class="gallery-grid reveal">
+          <div class="gallery-item" data-src="assets/gallery1.jpg">
+            <img
+              src="assets/gallery1.jpg"
+              alt="Notre rencontre"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'gallery-placeholder\'>📷<span>Photo 1</span></div>'
+              "
+            />
+          </div>
+
+          <div class="gallery-item" data-src="assets/gallery2.jpg">
+            <img
+              src="assets/gallery2.jpg"
+              alt="Notre voyage"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'gallery-placeholder\'>📷<span>Photo 2</span></div>'
+              "
+            />
+          </div>
+
+          <div class="gallery-item" data-src="assets/gallery3.jpg">
+            <img
+              src="assets/gallery3.jpg"
+              alt="Notre vie ensemble"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'gallery-placeholder\'>📷<span>Photo 3</span></div>'
+              "
+            />
+          </div>
+
+          <div class="gallery-item" data-src="assets/gallery4.jpg">
+            <img
+              src="assets/gallery4.jpg"
+              alt="Nos fiançailles"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'gallery-placeholder\'>📷<span>Photo 4</span></div>'
+              "
+            />
+          </div>
+
+          <div class="gallery-item" data-src="assets/gallery5.jpg">
+            <img
+              src="assets/gallery5.jpg"
+              alt="Notre bonheur"
+              onerror="
+                this.parentElement.innerHTML =
+                  '<div class=\'gallery-placeholder\'>📷<span>Photo 5</span></div>'
+              "
+            />
+          </div>
+
+          <div class="gallery-item">
+            <!-- Exemple avec vidéo : décommente et adapte -->
+            <!--
+        <video src="assets/video-couple.mp4" autoplay muted loop playsinline></video>
+        -->
+            <div class="gallery-placeholder">
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              <span>Vidéo à venir</span>
+            </div>
+          </div>
+        </div>
+        <!-- /gallery-grid -->
+      </section>
+
+      <!-- ── ⑤ RSVP ───────────────────────────────────────── -->
+      <section id="section-rsvp" class="w-section" aria-labelledby="rsvp-title">
+        <span class="section-label reveal">Répondez</span>
+        <h2 class="section-title reveal" id="rsvp-title">
+          Confirmer votre présence
+        </h2>
+
+        <p
+          class="reveal"
+          style="
+            text-align: center;
+            font-style: italic;
+            color: var(--ink-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Merci de bien vouloir confirmer votre venue avant le
+          <!-- ✏️ PERSONNALISE -->
+          <strong style="color: var(--gold-dark)">1er juillet 2025</strong>.
+        </p>
+
+        <!--
+      ✏️ PERSONNALISE : 
+      Pour recevoir les RSVP par email, utilise Formspree :
+      1. Crée un compte sur formspree.io
+      2. Crée un nouveau formulaire
+      3. Remplace action="" par action="https://formspree.io/f/TON_ID"
+      4. Ajoute method="POST"
+    -->
+        <form class="rsvp-form reveal" id="rsvp-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rsvp-prenom">Prénom</label>
+              <input
+                type="text"
+                id="rsvp-prenom"
+                name="prenom"
+                required
+                placeholder="Votre prénom"
+              />
+            </div>
+            <div class="form-group">
+              <label for="rsvp-nom">Nom</label>
+              <input
+                type="text"
+                id="rsvp-nom"
+                name="nom"
+                required
+                placeholder="Votre nom"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-email">Adresse email</label>
+            <input
+              type="email"
+              id="rsvp-email"
+              name="email"
+              required
+              placeholder="vous@exemple.fr"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rsvp-presence">Présence</label>
+              <select id="rsvp-presence" name="presence" required>
+                <option value="" disabled selected>Choisir…</option>
+                <option value="oui">Oui, avec grand plaisir ! ♡</option>
+                <option value="non">Je serai malheureusement absent(e)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-convives">Nombre de convives</label>
+              <select id="rsvp-convives" name="convives">
+                <option value="1">1 personne</option>
+                <option value="2">2 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">4 personnes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-regime">Régime alimentaire</label>
+            <select id="rsvp-regime" name="regime">
+              <option value="aucun">Aucune restriction</option>
+              <option value="vegetarien">Végétarien</option>
+              <option value="vegan">Vegan</option>
+              <option value="sans-gluten">Sans gluten</option>
+              <option value="halal">Halal</option>
+              <option value="autre">Autre (préciser ci-dessous)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-message">Un message, un souhait ?</label>
+            <textarea
+              id="rsvp-message"
+              name="message"
+              placeholder="Un mot gentil pour les mariés, une restriction alimentaire à préciser…"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            Envoyer ma réponse →
+          </button>
+        </form>
+        <!-- /rsvp-form -->
+
+        <!-- Message de confirmation -->
+        <div class="rsvp-success" id="rsvp-success" aria-live="polite">
+          Merci infiniment ! Votre réponse a bien été reçue. ♡<br />
+          <span
+            style="
+              font-size: 0.9rem;
+              color: var(--ink-muted);
+              font-family: var(--font-body);
+              font-style: italic;
+            "
+          >
+            Nous avons hâte de vous accueillir en ce jour si précieux.
+          </span>
+        </div>
+      </section>
+
+      <!-- ── ⑥ MOT DES MARIÉS ─────────────────────────────── -->
+      <section
+        id="section-mot"
+        class="w-section"
+        aria-labelledby="mot-title"
+        style="text-align: center"
+      >
+        <!-- Ornement SVG bas de page -->
+        <svg
+          aria-hidden="true"
+          width="200"
+          height="80"
+          viewBox="0 0 200 80"
+          style="display: block; margin: 0 auto 2rem; opacity: 0.35"
+        >
+          <path
+            d="M100,40 Q70,10 20,20 M100,40 Q130,10 180,20"
+            stroke="#c4a76a"
+            stroke-width="1.2"
+            fill="none"
+          />
+          <path
+            d="M100,40 Q80,20 50,5 M100,40 Q120,20 150,5"
+            stroke="#a8c5a0"
+            stroke-width="0.8"
+            fill="none"
+          />
+          <circle cx="20" cy="20" r="5" fill="#c4a76a" opacity="0.8" />
+          <circle cx="180" cy="20" r="5" fill="#c4a76a" opacity="0.8" />
+          <circle cx="50" cy="5" r="4" fill="#d4a5b0" opacity="0.7" />
+          <circle cx="150" cy="5" r="4" fill="#d4a5b0" opacity="0.7" />
+          <ellipse
+            cx="70"
+            cy="18"
+            rx="10"
+            ry="5"
+            fill="#a8c5a0"
+            opacity="0.4"
+            transform="rotate(-20,70,18)"
+          />
+          <ellipse
+            cx="130"
+            cy="18"
+            rx="10"
+            ry="5"
+            fill="#a8c5a0"
+            opacity="0.4"
+            transform="rotate(20,130,18)"
+          />
+        </svg>
+
+        <span class="section-label reveal">Un mot</span>
+        <h2 class="section-title reveal" id="mot-title">
+          De nos Cœurs aux Vôtres
+        </h2>
+
+        <blockquote
+          class="reveal"
+          style="
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--ink-light);
+            line-height: 1.8;
+            position: relative;
+            padding: 0 2rem;
+          "
+        >
+          <span
+            style="
+              position: absolute;
+              left: 0;
+              top: -0.5rem;
+              font-size: 3rem;
+              color: var(--gold);
+              opacity: 0.4;
+              line-height: 1;
+              font-family: Georgia, serif;
+            "
+            >"</span
+          >
+          <!-- ✏️ PERSONNALISE : votre citation ou mot personnel -->
+          Partager ce jour avec vous est notre plus grande joie. Vous qui avez
+          accompagné notre histoire, chacun à votre façon, vous serez le plus
+          beau cadeau de ce mariage.
+          <span
+            style="
+              position: absolute;
+              right: 0;
+              bottom: -0.5rem;
+              font-size: 3rem;
+              color: var(--gold);
+              opacity: 0.4;
+              line-height: 1;
+              font-family: Georgia, serif;
+            "
+            >"</span
+          >
+        </blockquote>
+
+        <p
+          class="reveal reveal-delay-2"
+          style="
+            margin-top: 2rem;
+            font-family: var(--font-script);
+            font-size: 1.5rem;
+            color: var(--gold-dark);
+          "
+        >
+          Phylidia &amp; Guillaume
+        </p>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ════════════════════════════════════════════════════
+  FOOTER
+════════════════════════════════════════════════════ -->
+    <footer id="page-footer">
+      <span class="footer-monogram">P &amp; G</span>
+
+      <div
+        class="ornament-divider"
+        style="justify-content: center; max-width: 300px; margin: 0 auto 1rem"
+      >
+        ✦
+      </div>
+
+      <!-- ✏️ PERSONNALISE -->
+      <p>20 Septembre 2025 — Paris, France</p>
+
+      <p
+        style="
+          margin-top: 1rem;
+          font-size: 0.8rem;
+          color: var(--ink-muted);
+          opacity: 0.6;
+        "
+      >
+        Fait avec amour ♡
+      </p>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="main.js"></script>
+  </body>
+</html>
