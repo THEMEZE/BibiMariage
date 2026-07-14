@@ -512,7 +512,7 @@ Tu recevras les RSVP directement par email !
 
             <div class="media-item" data-src="assets/photo1.jpg">
               <img
-                src="assets/photo1.jpg"
+                src="./assets/photo1.jpg"
                 alt="Phylidia et Guillaume"
                 onerror="
                   this.parentElement.innerHTML =
@@ -523,7 +523,7 @@ Tu recevras les RSVP directement par email !
 
             <div class="media-item" data-src="assets/photo2.jpg">
               <img
-                src="assets/photo2.jpg"
+                src="./assets/photo2.jpg"
                 alt="Photo de couple"
                 onerror="
                   this.parentElement.innerHTML =
@@ -534,7 +534,7 @@ Tu recevras les RSVP directement par email !
 
             <div class="media-item" data-src="assets/photo3.jpg">
               <img
-                src="assets/photo3.jpg"
+                src="./assets/photo3.jpg"
                 alt="Photo de couple"
                 onerror="
                   this.parentElement.innerHTML =
@@ -708,7 +708,7 @@ Tu recevras les RSVP directement par email !
         <div class="gallery-grid reveal">
           <div class="gallery-item" data-src="assets/gallery1.jpg">
             <img
-              src="assets/gallery1.jpg"
+              src="./assets/gallery1.jpg"
               alt="Notre rencontre"
               onerror="
                 this.parentElement.innerHTML =
@@ -719,7 +719,7 @@ Tu recevras les RSVP directement par email !
 
           <div class="gallery-item" data-src="assets/gallery2.jpg">
             <img
-              src="assets/gallery2.jpg"
+              src="./assets/gallery2.jpg"
               alt="Notre voyage"
               onerror="
                 this.parentElement.innerHTML =
@@ -730,7 +730,7 @@ Tu recevras les RSVP directement par email !
 
           <div class="gallery-item" data-src="assets/gallery3.jpg">
             <img
-              src="assets/gallery3.jpg"
+              src="./assets/gallery3.jpg"
               alt="Notre vie ensemble"
               onerror="
                 this.parentElement.innerHTML =
@@ -741,7 +741,7 @@ Tu recevras les RSVP directement par email !
 
           <div class="gallery-item" data-src="assets/gallery4.jpg">
             <img
-              src="assets/gallery4.jpg"
+              src="./assets/gallery4.jpg"
               alt="Nos fiançailles"
               onerror="
                 this.parentElement.innerHTML =
@@ -752,7 +752,7 @@ Tu recevras les RSVP directement par email !
 
           <div class="gallery-item" data-src="assets/gallery5.jpg">
             <img
-              src="assets/gallery5.jpg"
+              src="./assets/gallery5.jpg"
               alt="Notre bonheur"
               onerror="
                 this.parentElement.innerHTML =
@@ -763,9 +763,15 @@ Tu recevras les RSVP directement par email !
 
           <div class="gallery-item">
             <!-- Exemple avec vidéo : décommente et adapte -->
-            <!--
-        <video src="assets/video-couple.mp4" autoplay muted loop playsinline></video>
-        -->
+
+            <video
+              src="assets/video-couple.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+
             <div class="gallery-placeholder">
               <svg
                 viewBox="0 0 24 24"
@@ -1066,7 +1072,7 @@ Tu recevras les RSVP directement par email !
 </html>
 ```
 
-## `style.css``
+## `style.css`
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&display=swap');
@@ -1300,7 +1306,7 @@ body{
 }
 
 /* ── LETTER ───────────────────────────────────────────── */
-.letter{
+/* .letter{
   position:absolute;
   bottom:100px;
   left:50%;
@@ -1322,6 +1328,30 @@ body{
   transform:translateX(-50%) translateY(-110%);
   opacity:1;
   pointer-events:auto;
+} */
+
+/* ── LETTER ───────────────────────────────────────────── */
+.letter{
+  position:absolute;
+  top:290px;              /* ← position fixe sous l'enveloppe, ne bouge plus */
+  left:50%;
+  transform:translateX(-50%);  /* uniquement centrage horizontal, plus de Y */
+  width:min(380px, 86vw);
+  background:var(--white-warm);
+  border:1px solid #e0d4b8;
+  border-radius:2px;
+  padding:2.5rem 2.5rem 2rem;
+  min-height: 100px;
+  z-index:3;
+  box-shadow:0 -4px 24px rgba(60,40,10,0.12);
+  transition:opacity 0.6s ease 0.2s;  /* ← plus de transition sur transform */
+  opacity:0;
+  pointer-events:none;
+}
+.letter.is-visible{
+  opacity:1;
+  pointer-events:auto;
+  /* plus de translateY ici : le haut ne bouge plus */
 }
 
 /* Letter paper lines texture */
@@ -1808,6 +1838,7 @@ body{
   .timeline-item{grid-template-columns:60px 1fr}
   .timeline-dot{left:56px}
 }
+
 
 ```
 

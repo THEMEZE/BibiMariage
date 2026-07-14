@@ -229,7 +229,7 @@ body{
 }
 
 /* ── LETTER ───────────────────────────────────────────── */
-.letter{
+/* .letter{
   position:absolute;
   bottom:100px;
   left:50%;
@@ -251,6 +251,30 @@ body{
   transform:translateX(-50%) translateY(-110%);
   opacity:1;
   pointer-events:auto;
+} */
+
+/* ── LETTER ───────────────────────────────────────────── */
+.letter{
+  position:absolute;
+  top:290px;              /* ← position fixe sous l'enveloppe, ne bouge plus */
+  left:50%;
+  transform:translateX(-50%);  /* uniquement centrage horizontal, plus de Y */
+  width:min(380px, 86vw);
+  background:var(--white-warm);
+  border:1px solid #e0d4b8;
+  border-radius:2px;
+  padding:2.5rem 2.5rem 2rem;
+  min-height: 100px;
+  z-index:3;
+  box-shadow:0 -4px 24px rgba(60,40,10,0.12);
+  transition:opacity 0.6s ease 0.2s;  /* ← plus de transition sur transform */
+  opacity:0;
+  pointer-events:none;
+}
+.letter.is-visible{
+  opacity:1;
+  pointer-events:auto;
+  /* plus de translateY ici : le haut ne bouge plus */
 }
 
 /* Letter paper lines texture */
