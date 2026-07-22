@@ -230,7 +230,7 @@ body{
 
 /* ── LETTER ───────────────────────────────────────────── */
 .letter{
-  position:absolute;
+  position:relative;
   /* bottom:100px; */
   top:290px;              /* ← position fixe sous l'enveloppe, ne bouge plus */
   left:50%;
@@ -240,7 +240,7 @@ body{
   border:1px solid #e0d4b8;
   border-radius:2px;
   padding:2.5rem 2.5rem 2rem;
-  min-height: 100px;
+  min-height: 580px;
   z-index:3;
   box-shadow:0 -4px 24px rgba(60,40,10,0.12);
   transition:transform 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.2s,
@@ -249,7 +249,7 @@ body{
   pointer-events:none;
 }
 .letter.is-visible{
-  transform:translateX(-50%) translateY(-100%);
+  transform:translateX(-55%) translateY(-75%);
   opacity:1;
   pointer-events:auto;
 }
