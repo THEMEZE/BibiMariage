@@ -229,7 +229,7 @@ body{
 }
 
 /* ── LETTER ───────────────────────────────────────────── */
-/* .letter{
+.letter{
   position:absolute;
   bottom:100px;
   left:50%;
@@ -248,13 +248,13 @@ body{
   pointer-events:none;
 }
 .letter.is-visible{
-  transform:translateX(-50%) translateY(-110%);
+  transform:translateX(-50%) translateY(-100%);
   opacity:1;
   pointer-events:auto;
-} */
+}
 
 /* ── LETTER ───────────────────────────────────────────── */
-.letter{
+.letter0{
   position:absolute;
   top:290px;              /* ← position fixe sous l'enveloppe, ne bouge plus */
   left:50%;
@@ -271,7 +271,7 @@ body{
   opacity:0;
   pointer-events:none;
 }
-.letter.is-visible{
+.letter.is-visible0{
   opacity:1;
   pointer-events:auto;
   /* plus de translateY ici : le haut ne bouge plus */
