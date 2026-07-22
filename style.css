@@ -231,7 +231,8 @@ body{
 /* ── LETTER ───────────────────────────────────────────── */
 .letter{
   position:absolute;
-  bottom:100px;
+  /* bottom:100px; */
+  top:290px;              /* ← position fixe sous l'enveloppe, ne bouge plus */
   left:50%;
   transform:translateX(-50%) translateY(0);
   width:min(380px, 86vw);
