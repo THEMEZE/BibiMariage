@@ -249,7 +249,7 @@ body{
   pointer-events:none;
 }
 .letter.is-visible{
-  transform:translateX(-50%) translateY(-10%);
+  transform:translateX(-50%) translateY(-100%);
   opacity:1;
   pointer-events:auto;
 }
